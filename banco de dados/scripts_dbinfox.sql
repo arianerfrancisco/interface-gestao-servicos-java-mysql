@@ -32,6 +32,29 @@ email varchar(50)
 
 describe tbclientes;
 select * from tbclientes;
-
 insert into tbclientes(nomecli,enderecocliente,fone,email) 
 values ('Ana','Rua','9999-9899','ana@email');
+
+describe tbos;
+select * from  tbos;
+create table tbos (
+os int primary key auto_increment,
+dataos timestamp default current_timestamp, -- garante que as os emitam data e hora
+equipamento varchar(150) not null,
+defeito varchar(150) not null,
+servico varchar(150),
+tecnico varchar(30),
+valor decimal(10,2),
+idcli int not null,
+foreign key(idcli) references tbclientes(idcli) -- aqui garante que todas as os tenham cli vinculados
+);
+insert into tbos (equipamento,defeito,servico,tecnico,valor,idcli) values
+('PC','não liga', 'troca fonte','Almir', 45.56,1);
+
+-- o codigo abaixo traz informacoes de duas tabelas
+select -- garante o requisito relatorio de serviços
+O.os, equipamento,defeito,servico,valor,
+C.nomecli,fone
+from tbos as O
+inner join tbclientes as C
+on (o.idcli = C.idcli);
