@@ -1,0 +1,6 @@
+DAL (Data Access Layer) - É um projeto/camada responsável pela estrutura para acesso e persistência dos dados da aplicação. É um padrão de arquitetura para separação da estrutura de acesso a base de dados da camada de apresentação da aplicação.
+
+O DAL possui objetos DAO (Data Access Object) que escondem a complexidade da lógica de acesso a dados. DAO é um padrão de projeto.
+quandoQuando nos referimos ao DAL, estamos falando da camada que separa a camada de negócio, que contém toda a lógica relacionada às regras do negócio, e a camada de banco de dados, cujo nome é autoexplicativo. 
+O DAL é um termo arquitetônico que se refere à uma das camadas de um projeto de software, enquanto o DAO é apenas um detalhe de implementação que pode, ou não, ser implementado para compor o DAL.
+Vantagens: caso futuramente o banco seja alterado, apenas esse trecho precisa ser reescrito, sem comprometer todo o sistema.
