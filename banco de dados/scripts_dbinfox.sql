@@ -58,3 +58,7 @@ C.nomecli,fone
 from tbos as O
 inner join tbclientes as C
 on (o.idcli = C.idcli);
+
+select * from tbusuarios;
+select * from tbusuarios where login='admin' and senha='admin';
+

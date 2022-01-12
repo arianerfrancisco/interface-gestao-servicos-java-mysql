@@ -4,3 +4,5 @@ O DAL possui objetos DAO (Data Access Object) que escondem a complexidade da ló
 quandoQuando nos referimos ao DAL, estamos falando da camada que separa a camada de negócio, que contém toda a lógica relacionada às regras do negócio, e a camada de banco de dados, cujo nome é autoexplicativo. 
 O DAL é um termo arquitetônico que se refere à uma das camadas de um projeto de software, enquanto o DAO é apenas um detalhe de implementação que pode, ou não, ser implementado para compor o DAL.
 Vantagens: caso futuramente o banco seja alterado, apenas esse trecho precisa ser reescrito, sem comprometer todo o sistema.
+
+..\mysql-connector-java-8.0.27.jar >> tem que ser a mesma versao do mysql instalado no pc
