@@ -16,7 +16,7 @@ select * from tbusuarios;
 insert into tbusuarios (iduser,usuario,fone,login,senha) values (1,'Jose de Assis','9999-9999','joseassis','123456');
 -- READ --> select
 insert into tbusuarios (iduser,usuario,fone,login,senha) values (2,'Administrador','9999-9999','admin','admin');
-insert into tbusuarios (iduser,usuario,fone,login,senha) values (3,'Manoel José','9999-9999','manoeljose','123456');
+insert into tbusuarios (iduser,usuario,fone,login,senha, perfil) values (3,'Ana','9999-9999','manoeljose','123456','user');
 -- UPADTE --> update
 update tbusuarios set fone='8888-8888' where iduser=2;
 -- DELETE --> delete
@@ -61,4 +61,14 @@ on (o.idcli = C.idcli);
 
 select * from tbusuarios;
 select * from tbusuarios where login='admin' and senha='admin';
+
+describe tbusuarios;
+--  alinha abaixo adiciona um campo na tabela
+alter table tbusuarios add column perfil varchar(20) not null;
+-- a linha abaixo remove um campo da tabela
+alter table tbusuarios drop column perfil;
+
+update tbusuarios set perfil='admin' where iduser=1;
+update tbusuarios set perfil='admin' where iduser=2;
+
 

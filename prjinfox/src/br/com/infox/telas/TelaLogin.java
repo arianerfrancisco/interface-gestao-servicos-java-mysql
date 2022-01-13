@@ -11,7 +11,7 @@ public class TelaLogin extends javax.swing.JFrame {
     ResultSet rs = null;
 
     public void logar() {
- 
+
         String sql = " select * from tbusuarios where login=? and senha=?";
         try {
             // as linhas abaixo preparam a consulta ao bd em funcao do
@@ -19,17 +19,33 @@ public class TelaLogin extends javax.swing.JFrame {
             // conteudo das variaveis
             pst = conexao.prepareStatement(sql);
             pst.setString(1, txtUsuario.getText());
-            pst.setString(2, txtSenha.getText());
+            String captura = new String(txtSenha.getPassword());
+            pst.setString(2, captura);
             // a linha abaixo a query - consulta ao banco de dasdos
             rs = pst.executeQuery();
             // se existir usuario e senha correspondente
             if (rs.next()) {
-                // ele segue com a tela principal
-                TelaPrincipal principal = new TelaPrincipal();
-                principal.setVisible(true);
+                // a linha abaixo obtem o conteudo do campo perfil da tbsuarios
+                String perfil = rs.getString(6);
+                //System.out.println(perfil);
+                // a estrutura abaixo faz o tratamento do perfil do usuario
+                if (perfil.equals("admin")) { //equals comparar string no java
+                    TelaPrincipal principal = new TelaPrincipal();
+                    principal.setVisible(true);
+                    TelaPrincipal.MenRel.setEnabled(true);
+                    TelaPrincipal.MenCadUsu.setEnabled(true);
+                    TelaPrincipal.lblUsuario.setText(rs.getString(2));
+                    this.dispose();// ira fechar a tela de login
+                } else {
+                    TelaPrincipal principal = new TelaPrincipal();
+                    principal.setVisible(true);
+                    TelaPrincipal.lblUsuario.setText(rs.getString(2));
+                    this.dispose();
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Usuário e/ou senha inválidos");
+                JOptionPane.showMessageDialog(null, "Usuário e/ou Senha Inválidos");
             }
+            conexao.close(); // encerra o banco de dados
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
@@ -73,6 +89,7 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         btnlogin.setText("Login");
+        btnlogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnloginActionPerformed(evt);
