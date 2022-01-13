@@ -19,7 +19,7 @@
 
 
 
-Nota: Estudos baseados na playlist: Canal do Professor José de Assis
+Nota: Estudos baseados na playlist do Canal do Professor José de Assis
 
 
 [![Java MySQL](https://img.youtube.com/vi/eA4WjjkzK3c/0.jpg)](https://youtu.be/eA4WjjkzK3c "Professor José de Assis") 
