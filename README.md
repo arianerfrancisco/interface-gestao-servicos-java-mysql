@@ -18,7 +18,8 @@
 * MySQL
 
 
-Nota: Estudos baseados na playlist: https://www.youtube.com/watch?v=eA4WjjkzK3c&list=PLbEOwbQR9lqxsTusvu8wfkUECrmcV81MU&index=2 do Professor José de Assis
+Nota: Estudos baseados na playlist: 
+[![Java MySQL](https://img.youtube.com/vi/eA4WjjkzK3c/0.jpg)](https://youtu.be/eA4WjjkzK3c "Professor José de Assis") 
 
 ## Ferramentas usadas neste projeto
 [openJDK 8 (LTS)](https://adoptopenjdk.net/)
