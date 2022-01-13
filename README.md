@@ -1,12 +1,12 @@
-## JavaMySQL-SistemaGestaodeServicos
+### JavaMySQL-SistemaGestaodeServicos
  
 
-#Requisitos do Sistema
+##Requisitos do Sistema
 - Cadastro de cliente
 - Emissão de OS
 - Relatório de Serviços
 
-#Restrições
+##Restrições
 
 - Não pode existir nenhuma OS sem cliente vinculado
 - O sistema deverá gerar automaticamente data e hora na emissão da OS
