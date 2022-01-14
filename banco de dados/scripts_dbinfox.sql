@@ -80,3 +80,6 @@ describe tbos;
 select * from tbos;
 alter table tbos add tipo varchar(15) not null after dataos;
 alter table tbos add situacao varchar(20) not null after tipo;
+select os, date_format(dataos, '%d/%m/%Y - %H:%i'), tipo,situacao,equipamento,defeito,servico,tecnico,valor,idcli from tbos where os=1;
+
+-- senha user ireports Infox123456
