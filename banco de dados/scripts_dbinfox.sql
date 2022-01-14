@@ -71,4 +71,7 @@ alter table tbusuarios drop column perfil;
 update tbusuarios set perfil='admin' where iduser=1;
 update tbusuarios set perfil='admin' where iduser=2;
 
-
+select * from tbclientes;
+select idcli, nomecli, fone from tbclientes where nomecli like 'sa%';
+--  a linha abaixo cria um apelido aos campos
+select idcli as Id, nomecli as Nome, fone as Fone from tbclientes where nomecli like 'sa%';
