@@ -75,3 +75,8 @@ select * from tbclientes;
 select idcli, nomecli, fone from tbclientes where nomecli like 'sa%';
 --  a linha abaixo cria um apelido aos campos
 select idcli as Id, nomecli as Nome, fone as Fone from tbclientes where nomecli like 'sa%';
+
+describe tbos;
+select * from tbos;
+alter table tbos add tipo varchar(15) not null after dataos;
+alter table tbos add situacao varchar(20) not null after tipo;
