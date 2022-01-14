@@ -133,6 +133,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menRelSer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         menRelSer.setText("Serviços");
+        menRelSer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menRelSerActionPerformed(evt);
+            }
+        });
         menRel.add(menRelSer);
 
         Menu.add(menRel);
@@ -245,17 +250,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void MenRelCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenRelCliActionPerformed
         // gerando um relatorio
-         int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impressão deste relatório?", "Atenção", JOptionPane.YES_NO_OPTION);
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a emissão deste relatório?", "Atenção", JOptionPane.YES_NO_OPTION);
         if (confirma == JOptionPane.YES_OPTION) {
-          
+
             try {
-                JasperPrint print = JasperFillManager.fillReport("C:/reports/clientes.jasper",null,conexao);
-                JasperViewer.viewReport(print,false);
+                JasperPrint print = JasperFillManager.fillReport("C:/reports/clientes.jasper", null, conexao);
+                JasperViewer.viewReport(print, false);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
         }
     }//GEN-LAST:event_MenRelCliActionPerformed
+
+    private void menRelSerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menRelSerActionPerformed
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a emissão deste relatório?", "Atenção", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION) {
+
+            try {
+                JasperPrint print = JasperFillManager.fillReport("C:/reports/servicos.jasper", null, conexao);
+                JasperViewer.viewReport(print, false);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }//GEN-LAST:event_menRelSerActionPerformed
 
     /**
      * @param args the command line arguments

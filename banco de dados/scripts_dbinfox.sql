@@ -83,3 +83,12 @@ alter table tbos add situacao varchar(20) not null after tipo;
 select os, date_format(dataos, '%d/%m/%Y - %H:%i'), tipo,situacao,equipamento,defeito,servico,tecnico,valor,idcli from tbos where os=1;
 
 -- senha user ireports Infox123456
+select * from tbclientes;
+describe tbclientes;
+select * from tbclientes order by nomecli;
+-- juncao das duas tabelas ;
+select oser.os, dataos, tipo,situacao,equipamento,valor,
+cli.nomecli,fone
+from tbos as oser
+inner join tbclientes as cli
+on (cli.idcli = oser.idcli);

@@ -6,3 +6,5 @@ O DAL é um termo arquitetônico que se refere à uma das camadas de um projeto 
 Vantagens: caso futuramente o banco seja alterado, apenas esse trecho precisa ser reescrito, sem comprometer todo o sistema.
 
 ..\mysql-connector-java-8.0.27.jar >> tem que ser a mesma versao do mysql instalado no pc
+
+iReports: gera relatorios diretamento do bd.
