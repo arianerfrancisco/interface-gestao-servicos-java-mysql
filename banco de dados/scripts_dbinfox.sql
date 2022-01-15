@@ -86,9 +86,18 @@ select os, date_format(dataos, '%d/%m/%Y - %H:%i'), tipo,situacao,equipamento,de
 select * from tbclientes;
 describe tbclientes;
 select * from tbclientes order by nomecli;
+
 -- juncao das duas tabelas ;
 select oser.os, dataos, tipo,situacao,equipamento,valor,
 cli.nomecli,fone
 from tbos as oser
 inner join tbclientes as cli
 on (cli.idcli = oser.idcli);
+
+-- select ordem de servico
+select * from tbos;
+describe tbos;
+select * from tbos where os=5;
+
+-- verificar a ultima os gerada
+select max(os) from tbos;
